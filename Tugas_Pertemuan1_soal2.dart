@@ -19,6 +19,21 @@ class Persegi extends BangunDatar {
   }
 }
 
+class PersegiPanjang extends BangunDatar {
+  int panjang;
+  int lebar;
+  PersegiPanjang(this.panjang,this.lebar);
+
+  @override
+  double luas() {
+    return panjang*lebar.toDouble();
+  }
+
+  double keliling() {
+    return 2*(panjang+lebar).toDouble();
+  }
+}
+
 class Segitiga extends BangunDatar {
   int alas;
   int tinggi;
@@ -54,6 +69,7 @@ void main() {
   Persegi persegi = Persegi(6);
   Segitiga segitiga = Segitiga(4, 3, 4);
   Lingkaran lingkaran = Lingkaran(10);
+  PersegiPanjang persegipanjang = PersegiPanjang(6, 5);
 
   print('Luas Persegi adalah ${persegi.luas()} cm persegi');
   print('Keliling Persegi adalah ${persegi.keliling()} cm');
@@ -62,6 +78,8 @@ void main() {
   print('Keliling Segitiga adalah ${segitiga.keliling()} cm');
 
   print('Luas Lingkaran adalah ${lingkaran.luas()} cm persegi');
-  print(
-      'Keliling Lingkaran adalah ${lingkaran.keliling().toStringAsPrecision(4)} cm');
+  print('Keliling Lingkaran adalah ${lingkaran.keliling().toStringAsPrecision(4)} cm');
+
+  print('Luas Persegi Panjang adalah ${persegipanjang.luas()} cm persegi');
+  print('Keliling Persegi Panjang adalah ${persegipanjang.keliling()} cm');
 }
